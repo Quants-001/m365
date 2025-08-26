@@ -1,0 +1,8 @@
+neo4j==5.11.0
+pandas==2.2.2
+python-dotenv==1.0.1
+sentence-transformers==2.2.2
+chromadb==0.3.26
+fastapi==0.95.2
+uvicorn[standard]==0.22.0
+tqdm==4.66.1

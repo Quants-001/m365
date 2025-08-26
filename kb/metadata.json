@@ -1,0 +1,1506 @@
+{
+  "created_at": "2025-08-24T21:32:42.791527",
+  "processing_time_seconds": 99.5449390411377,
+  "total_records": 2503,
+  "total_columns": 164,
+  "processing_stats": {
+    "total_files": 89,
+    "successful": 89,
+    "failed": 0,
+    "success_rate": 100.0,
+    "files_per_second": 0.8940685569481346,
+    "records_per_second": 25.144422449900908
+  },
+  "system_info": {
+    "cpu_cores": 16,
+    "max_workers": 8,
+    "pdf_timeout": 300
+  },
+  "file_details": [
+    {
+      "file": "Microsoft-365-Matrix-Export.csv",
+      "type": "csv",
+      "status": "success",
+      "rows": 476,
+      "columns": 30,
+      "strategy": 1
+    },
+    {
+      "file": "M365Maps April 2025.xlsx",
+      "type": "excel",
+      "status": "success",
+      "sheets": [
+        {
+          "sheet": "m365maps.com",
+          "rows": 429,
+          "columns": 31
+        }
+      ],
+      "total_rows": 429
+    },
+    {
+      "file": "Microsoft 365 Matrix.xlsx",
+      "type": "excel",
+      "status": "success",
+      "sheets": [
+        {
+          "sheet": "Matrix",
+          "rows": 484,
+          "columns": 32
+        }
+      ],
+      "total_rows": 484
+    },
+    {
+      "file": "CAL Other Bridges.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 9,
+      "processing_time": 1.2445616722106934
+    },
+    {
+      "file": "CAL Main Bridges.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 2
+        }
+      ],
+      "total_rows": 20,
+      "processing_time": 1.3360581398010254
+    },
+    {
+      "file": "CAL All Bridges.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 9,
+      "processing_time": 1.442223072052002
+    },
+    {
+      "file": "CALs.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 2
+        }
+      ],
+      "total_rows": 19,
+      "processing_time": 0.7829957008361816
+    },
+    {
+      "file": "AI Services.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 3,
+      "processing_time": 2.240016222000122
+    },
+    {
+      "file": "EMS E3.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 9,
+      "processing_time": 1.6060802936553955
+    },
+    {
+      "file": "EMS All.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 8,
+      "processing_time": 2.794823408126831
+    },
+    {
+      "file": "EMS E5.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 8,
+      "processing_time": 2.061689615249634
+    },
+    {
+      "file": "EMS Simple.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 8,
+      "processing_time": 2.2679219245910645
+    },
+    {
+      "file": "Entra ID Governance.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 14,
+      "processing_time": 0.5731077194213867
+    },
+    {
+      "file": "Entra Workload ID.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 5,
+      "processing_time": 0.3920018672943115
+    },
+    {
+      "file": "Entra Suite.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 13,
+      "processing_time": 0.6173648834228516
+    },
+    {
+      "file": "Entra ID All.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 9,
+      "processing_time": 2.106515407562256
+    },
+    {
+      "file": "Entra ID Paid.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 9,
+      "processing_time": 1.3692693710327148
+    },
+    {
+      "file": "Microsoft 365 Apps All.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 6,
+      "processing_time": 0.6560986042022705
+    },
+    {
+      "file": "Microsoft 365 Apps Business.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 6,
+      "processing_time": 0.34870219230651855
+    },
+    {
+      "file": "Intune.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 19,
+      "processing_time": 0.808408260345459
+    },
+    {
+      "file": "Microsoft 365 Apps Enterprise.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 21,
+      "processing_time": 0.524573802947998
+    },
+    {
+      "file": "Microsoft 365 Business Basic.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 3,
+      "processing_time": 1.7007315158843994
+    },
+    {
+      "file": "Microsoft 365 Business Standard.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 3,
+      "processing_time": 2.038740873336792
+    },
+    {
+      "file": "Microsoft 365 Consumer.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "pdfplumber",
+          "tables": 8
+        }
+      ],
+      "total_rows": 0,
+      "processing_time": 0.32736635208129883
+    },
+    {
+      "file": "Microsoft 365 Copilot Basic Design (1).pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 1,
+      "processing_time": 1.419175386428833
+    },
+    {
+      "file": "Microsoft 365 Business Premium.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 2
+        }
+      ],
+      "total_rows": 10,
+      "processing_time": 6.237293481826782
+    },
+    {
+      "file": "Microsoft 365 Copilot Basic Design.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 1,
+      "processing_time": 1.5545060634613037
+    },
+    {
+      "file": "Microsoft 365 Copilot Extensibility.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 2,
+      "processing_time": 2.532592296600342
+    },
+    {
+      "file": "Microsoft 365 Copilot Detailed Design.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 1,
+      "processing_time": 3.0896241664886475
+    },
+    {
+      "file": "Microsoft 365 Copilot Web Content.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "pdfplumber",
+          "tables": 1
+        },
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 1,
+      "processing_time": 1.4665718078613281
+    },
+    {
+      "file": "Microsoft 365 Copilot.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 3,
+      "processing_time": 1.8048663139343262
+    },
+    {
+      "file": "Essential 8.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "pdfplumber",
+          "tables": 1
+        },
+        {
+          "method": "camelot",
+          "tables": 2
+        }
+      ],
+      "total_rows": 26,
+      "processing_time": 12.499330759048462
+    },
+    {
+      "file": "Microsoft 365 Business All.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "pdfplumber",
+          "tables": 1
+        },
+        {
+          "method": "camelot",
+          "tables": 2
+        }
+      ],
+      "total_rows": 16,
+      "processing_time": 13.9913649559021
+    },
+    {
+      "file": "Microsoft 365 Education A1 (Legacy).pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "pdfplumber",
+          "tables": 1
+        },
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 5,
+      "processing_time": 4.459455966949463
+    },
+    {
+      "file": "Microsoft 365 Education A1 for Devices.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "pdfplumber",
+          "tables": 1
+        },
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 5,
+      "processing_time": 4.352508306503296
+    },
+    {
+      "file": "Microsoft 365 E3.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 2
+        }
+      ],
+      "total_rows": 11,
+      "processing_time": 7.3151633739471436
+    },
+    {
+      "file": "Microsoft 365 E5.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "pdfplumber",
+          "tables": 1
+        },
+        {
+          "method": "camelot",
+          "tables": 3
+        }
+      ],
+      "total_rows": 23,
+      "processing_time": 7.470033884048462
+    },
+    {
+      "file": "Microsoft 365 Education A3.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "pdfplumber",
+          "tables": 1
+        },
+        {
+          "method": "camelot",
+          "tables": 2
+        }
+      ],
+      "total_rows": 13,
+      "processing_time": 6.947187423706055
+    },
+    {
+      "file": "Microsoft 365 Education A5.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "pdfplumber",
+          "tables": 1
+        },
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 6,
+      "processing_time": 7.005388021469116
+    },
+    {
+      "file": "Microsoft 365 Education Student Use Benefits Simple.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "pdfplumber",
+          "tables": 1
+        },
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 5,
+      "processing_time": 4.0679285526275635
+    },
+    {
+      "file": "Microsoft 365 Education Student Use Benefits All.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "pdfplumber",
+          "tables": 1
+        },
+        {
+          "method": "camelot",
+          "tables": 2
+        }
+      ],
+      "total_rows": 12,
+      "processing_time": 12.342087030410767
+    },
+    {
+      "file": "Microsoft 365 Enterprise All.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "pdfplumber",
+          "tables": 1
+        },
+        {
+          "method": "camelot",
+          "tables": 2
+        }
+      ],
+      "total_rows": 15,
+      "processing_time": 21.367699146270752
+    },
+    {
+      "file": "Microsoft 365 Enterprise Landscape.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "pdfplumber",
+          "tables": 1
+        },
+        {
+          "method": "camelot",
+          "tables": 2
+        }
+      ],
+      "total_rows": 16,
+      "processing_time": 23.774104356765747
+    },
+    {
+      "file": "Microsoft 365 F1.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 2
+        }
+      ],
+      "total_rows": 11,
+      "processing_time": 5.009418487548828
+    },
+    {
+      "file": "Microsoft 365 Enterprise Venn.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "pdfplumber",
+          "tables": 1
+        },
+        {
+          "method": "camelot",
+          "tables": 2
+        }
+      ],
+      "total_rows": 17,
+      "processing_time": 25.229695796966553
+    },
+    {
+      "file": "Microsoft 365 F3.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 3
+        }
+      ],
+      "total_rows": 19,
+      "processing_time": 7.181348562240601
+    },
+    {
+      "file": "Microsoft 365 Personal and Family.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "pdfplumber",
+          "tables": 8
+        }
+      ],
+      "total_rows": 0,
+      "processing_time": 0.30400705337524414
+    },
+    {
+      "file": "Microsoft Defender CSPM.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 14,
+      "processing_time": 0.5636806488037109
+    },
+    {
+      "file": "Microsoft Defender for Business.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 8,
+      "processing_time": 0.5492877960205078
+    },
+    {
+      "file": "Microsoft 365 F5.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "pdfplumber",
+          "tables": 1
+        },
+        {
+          "method": "camelot",
+          "tables": 3
+        }
+      ],
+      "total_rows": 26,
+      "processing_time": 8.170203685760498
+    },
+    {
+      "file": "Microsoft Defender for Cloud Apps.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 10,
+      "processing_time": 0.5391921997070312
+    },
+    {
+      "file": "Microsoft 365 Education All.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "pdfplumber",
+          "tables": 1
+        },
+        {
+          "method": "camelot",
+          "tables": 2
+        }
+      ],
+      "total_rows": 15,
+      "processing_time": 42.19057846069336
+    },
+    {
+      "file": "Microsoft Defender for Office 365.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 19,
+      "processing_time": 0.6862194538116455
+    },
+    {
+      "file": "Microsoft Defender for Endpoint.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 8,
+      "processing_time": 0.9996955394744873
+    },
+    {
+      "file": "Microsoft Defender Vulnerability Management.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 16,
+      "processing_time": 0.8768010139465332
+    },
+    {
+      "file": "Microsoft Project.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 27,
+      "processing_time": 1.2084519863128662
+    },
+    {
+      "file": "Microsoft Teams Premium.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 17,
+      "processing_time": 0.6516077518463135
+    },
+    {
+      "file": "Microsoft Defender for Servers.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 39,
+      "processing_time": 2.401189088821411
+    },
+    {
+      "file": "Microsoft Teams Rooms Basic.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 14,
+      "processing_time": 0.43881797790527344
+    },
+    {
+      "file": "Microsoft Teams Enterprise.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 3,
+      "processing_time": 1.6986839771270752
+    },
+    {
+      "file": "Microsoft Teams Rooms Old.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 18,
+      "processing_time": 0.7968621253967285
+    },
+    {
+      "file": "Microsoft Teams Rooms Pro.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 22,
+      "processing_time": 0.9171252250671387
+    },
+    {
+      "file": "Microsoft Teams Rooms.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 24,
+      "processing_time": 1.1302158832550049
+    },
+    {
+      "file": "Microsoft Visio.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 28,
+      "processing_time": 1.2147765159606934
+    },
+    {
+      "file": "Microsoft Teams.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 3,
+      "processing_time": 3.1118314266204834
+    },
+    {
+      "file": "Multi Tenant Architecture.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "pdfplumber",
+          "tables": 1
+        },
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 1,
+      "processing_time": 3.5286550521850586
+    },
+    {
+      "file": "Office 365 E1.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 7,
+      "processing_time": 3.1628196239471436
+    },
+    {
+      "file": "Office 365 E3.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 37,
+      "processing_time": 1.5080084800720215
+    },
+    {
+      "file": "Office 365 E5.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 8,
+      "processing_time": 2.410177230834961
+    },
+    {
+      "file": "modern-work-plan-comparison-enterprise.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "pdfplumber",
+          "tables": 41
+        }
+      ],
+      "total_rows": 257,
+      "processing_time": 10.046267986297607
+    },
+    {
+      "file": "Office 365 Education All.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 7,
+      "processing_time": 4.5720295906066895
+    },
+    {
+      "file": "Office 365 Education Simple.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 7,
+      "processing_time": 3.1636829376220703
+    },
+    {
+      "file": "Office 365 Enterprise Simple.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 7,
+      "processing_time": 2.8305649757385254
+    },
+    {
+      "file": "Office 365 Enterprise All.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 7,
+      "processing_time": 3.6664681434631348
+    },
+    {
+      "file": "Office 365 F3.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 7,
+      "processing_time": 3.5739409923553467
+    },
+    {
+      "file": "Microsoft 365 Frontline All.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "pdfplumber",
+          "tables": 1
+        },
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 9,
+      "processing_time": 24.186952829360962
+    },
+    {
+      "file": "Office Consumer.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "pdfplumber",
+          "tables": 6
+        }
+      ],
+      "total_rows": 0,
+      "processing_time": 0.14754009246826172
+    },
+    {
+      "file": "Office 365 GCC All.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 7,
+      "processing_time": 3.383152961730957
+    },
+    {
+      "file": "Office 365 GCC F3.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 7,
+      "processing_time": 3.2281410694122314
+    },
+    {
+      "file": "SharePoint Advanced Management.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 2
+        }
+      ],
+      "total_rows": 10,
+      "processing_time": 1.060516119003296
+    },
+    {
+      "file": "Office 365 GCC G1.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 7,
+      "processing_time": 3.054079532623291
+    },
+    {
+      "file": "Virtual Desktop.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 1,
+      "processing_time": 1.1721539497375488
+    },
+    {
+      "file": "Viva.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 2
+        }
+      ],
+      "total_rows": 11,
+      "processing_time": 0.9253222942352295
+    },
+    {
+      "file": "Windows 365 Compare.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "pdfplumber",
+          "tables": 1
+        },
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 13,
+      "processing_time": 2.467381238937378
+    },
+    {
+      "file": "Windows 365.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "pdfplumber",
+          "tables": 1
+        },
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 3,
+      "processing_time": 2.4055209159851074
+    },
+    {
+      "file": "Windows Pro.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 20,
+      "processing_time": 0.7727828025817871
+    },
+    {
+      "file": "Windows Enterprise.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 7,
+      "processing_time": 2.409510850906372
+    },
+    {
+      "file": "Windows VL.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 7,
+      "processing_time": 2.9387869834899902
+    },
+    {
+      "file": "Related Services.pdf",
+      "type": "pdf",
+      "status": "success",
+      "methods": [
+        {
+          "method": "camelot",
+          "tables": 1
+        }
+      ],
+      "total_rows": 3,
+      "processing_time": 10.317320108413696
+    }
+  ],
+  "column_list": [
+    "8_18_2025",
+    "office_365",
+    "unnamed_2",
+    "unnamed_3",
+    "microsoft_365_business",
+    "unnamed_5",
+    "unnamed_6",
+    "microsoft_365_frontline",
+    "unnamed_8",
+    "unnamed_9",
+    "unnamed_10",
+    "unnamed_11",
+    "microsoft_365_enterprise",
+    "unnamed_13",
+    "unnamed_14",
+    "unnamed_15",
+    "microsoft_365_education",
+    "unnamed_17",
+    "unnamed_18",
+    "unnamed_19",
+    "unnamed_20",
+    "unnamed_21",
+    "source_file",
+    "source_type",
+    "extraction_strategy",
+    "file_size",
+    "file_hash",
+    "thread_name",
+    "processed_at",
+    "row_id",
+    "as_on_april_2025",
+    "office_365_enterprise",
+    "sheet_name",
+    "header_row",
+    "2025_07_02_00_00_00",
+    "unnamed_1",
+    "unnamed_4",
+    "unnamed_7",
+    "unnamed_12",
+    "unnamed_16",
+    "unnamed_22",
+    "unknown_col",
+    "1",
+    "2",
+    "3",
+    "extraction_method",
+    "table_number",
+    "accuracy",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "unknown_col_1",
+    "iinnttuunnee_ppllaann_11_mmll11_mmll22_mmll33",
+    "aapppplliiccaattiioonn_ccoonnttrrooll_mmll22_mmll33_aapppplloocckkeerr_mmll11",
+    "eesssseennttiiaall_88_ccoommpplliiaannccee_tteemmppllaatteess_rreeppoorrttiinngg",
+    "unknown_col_8",
+    "aaddvvaanncceedd_hhuunnttiinngg_mmll22_mmll33_ssuuppppoorrttss_mmll11",
+    "unknown_col_12",
+    "mmiiccrroossoofftt_sseennttiinneell_mmll22_mmll33_ssuuppppoorrttss_mmll11",
+    "aaaarroonnlloocckkeerr_mmll11_mmll22_mmll33_ggrroouupp_ppoolliicciieess_mmll11_mmll22_mmll33",
+    "page_number",
+    "bbaassiicc_aaccttiivviittyy_aaddooppttiioonn_aalleerrtt_aauuddiitt_mmoobbiilliittyy_and_and_bbooookk",
+    "bbaassiicc_aaccttiivviittyy_aaddooppttiioonn_aalleerrtt_aauuddiitt_mmoobbiilliittyy_and_and_bbooookk_1",
+    "bbaassiicc_aaccttiivviittyy_aaddooppttiioonn_aalleerrtt_aauuddiitt_ccoommpplliiaannccee_mmoobbiillii",
+    "bbaassiicc_aaccttiivviittyy_aaddooppttiioonn_aalleerrtt_aauuddiitt_ccoommpplliiaannccee_ccoonntteenn",
+    "ooffffiiccee_336655_sskkyyppee_ffoorr_tteeaammss_aauuddiioo_vviivvaa_iinnssiigghhttss_tteeaammss_ccl",
+    "unknown_col_2",
+    "unknown_col_6",
+    "bbaassiicc_ccooppiilloott_aaccttiivviittyy_aaddooppttiioonn_aalleerrtt_aauuddiitt_ccoommpplliiaanncc",
+    "aaddvvaanncceedd_eexxcchhaannggee_rreeaall_ttiimmee_aannttii_oonnlliinnee_rreeppoorrttss_pphhiisshhi",
+    "ccoonnddiittiioonnaall_ccuussttoommeerr_aacccceessss_kkeeyy_ffoorr_ssiitteess_ddaattaa_ddoouubbllee_",
+    "ccoommmm_ccoommpplliiaannccee_ccuussttoommeerr_lloocckkbbooxx_pprriivviilleeggeedd_aacccceessss_mmaa",
+    "mmiiccrroossoofftt_ooffffiiccee_336655_ooffffiiccee_336655_bbooookkiinnggss_336655_aappppss_ffoorr_c",
+    "ddeeffeennddeerr_ffoorr_ooffffiiccee_336655_ppllaann_11",
+    "mmiiccrroossoofftt_ooffffiiccee_336655_ddeeffeennddeerr_ffoorr_ooffffiiccee_336655_bbooookkiinnggss_",
+    "aaddvvaanncceedd_eexxcchhaannggee_aannttii_oonnlliinnee_pphhiisshhiinngg_pprrootteeccttiioonn_rreeaa",
+    "ccoommmm_ccoommpplliiaannccee_ccuussttoommeerr_lloocckkbbooxx_iinnffoorrmmaattiioonn_bbaarrrriieerrs",
+    "aaddvvaanncceedd_aapppp_pprrooxxyy_ccuussttoomm_aaddmmiinniissttrraattiivvee_sseeccuurriittyy_cclloo",
+    "aattttaacckk_aallwwaayyss_oonn_aapppplliiccaattiioonn_aassssiiggnneedd_aapppplloocckkeerr_aapppp_aas",
+    "unknown_col_3",
+    "unknown_col_7",
+    "bbaassiicc_aaccttiivviittyy_aaddooppttiioonn_aalleerrtt_aauuddiitt_ccoommpplliiaannccee_ddaattaa_llo",
+    "bbaassiicc_ccooppiilloott_aaccttiivviittyy_aaddooppttiioonn_aalleerrtt_aauuddiitt_ddaattaa_lloossss_",
+    "frontline_worker_plans_enterprise_mobility",
+    "unknown_col_4",
+    "unknown_col_5",
+    "unknown_col_9",
+    "unknown_col_10",
+    "unknown_col_11",
+    "unknown_col_13",
+    "unknown_col_14",
+    "unknown_col_15",
+    "unknown_col_16",
+    "unknown_col_17",
+    "desktop_client_apps1",
+    "unknown_col_18",
+    "exchange_kiosk_2_gb_mailbox",
+    "see_footnote_1",
+    "see_footnote_1_1",
+    "information_worker_plans_frontline_worker_plans",
+    "unknown_col_19",
+    "microsoft_teams",
+    "unknown_col_20",
+    "sharepoint_kiosk_2_gb_onedrive_storage",
+    "microsoft_graph_api",
+    "microsoft_planner",
+    "adoption_score",
+    "viva_insights_app_in_teams",
+    "viva_learning_in_teams",
+    "communities_conversations_and_storyline",
+    "microsoft_defender_for_cloud_apps_discovery",
+    "dlp_for_emails_and_files",
+    "azure_information_protection_plan_16",
+    "microsoft_entra_id1_free",
+    "microsoft_intune_plan_1",
+    "microsoft_defender_antimalware",
+    "manual_retention_labels",
+    "content_search",
+    "soft_purview_insider_risk_management",
+    "power_apps_for_microsoft_365",
+    "windows_11_edition",
+    "enterprise",
+    "enterprise_1",
+    "enterprise_2",
+    "enterprise_3",
+    "enterprise1",
+    "enterprise1_1",
+    "microsoft_365_e3_e5",
+    "office_365_e1_e3_e5",
+    "microsoft_365_f1_f3",
+    "microsoft_365_e5_security12",
+    "n_a",
+    "n_a_1",
+    "n_a_2",
+    "n_a_3",
+    "n_a_4",
+    "n_a_5",
+    "n_a_6",
+    "n_a_7",
+    "n_a_8",
+    "premium_assessments_add_on_for_compliance_manager19",
+    "copilot_chat1",
+    "teams_enterprise_teams_eea",
+    "sharepoint_advanced_management",
+    "viva_suite",
+    "microsoft_clipchamp_standard",
+    "power_bi_pro_per_user_per_month",
+    "windows_11_enterprise",
+    "universal_print_volume_add_on",
+    "bbaassiicc_aaccttiivviittyy_aaddooppttiioonn_aalleerrtt_aauuddiitt_ccoommpplliiaannccee_ccoonntteenn_1",
+    "aaddvvaanncceedd_eexxcchhaannggee_rreeaall_ttiimmee_ssaaffee_aannttii_oonnlliinnee_rreeppoorrttss_aa",
+    "ddaattaa_ccuussttoommeerr_lliiffeeccyyccllee_kkeeyy_mmaannaaggeemmeenntt_ddoouubbllee_kkeeyy_eexxaac",
+    "ssooffttwwaarree_aass_aa_sseerrvviiccee",
+    "ssooffttwwaarree_aass_aa_sseerrvviiccee_1",
+    "ppllaattffoorrmm_aass_aa_sseerrvviiccee",
+    "data_hash"
+  ],
+  "files_processed": [
+    "Microsoft-365-Matrix-Export.csv",
+    "M365Maps April 2025.xlsx",
+    "Microsoft 365 Matrix.xlsx",
+    "AI Services.pdf",
+    "CAL All Bridges.pdf",
+    "CAL Main Bridges.pdf",
+    "CAL Other Bridges.pdf",
+    "CALs.pdf",
+    "EMS All.pdf",
+    "EMS E3.pdf",
+    "EMS E5.pdf",
+    "EMS Simple.pdf",
+    "Entra ID All.pdf",
+    "Entra ID Governance.pdf",
+    "Entra ID Paid.pdf",
+    "Entra Suite.pdf",
+    "Entra Workload ID.pdf",
+    "Essential 8.pdf",
+    "Intune.pdf",
+    "Microsoft 365 Apps All.pdf",
+    "Microsoft 365 Apps Business.pdf",
+    "Microsoft 365 Apps Enterprise.pdf",
+    "Microsoft 365 Business All.pdf",
+    "Microsoft 365 Business Basic.pdf",
+    "Microsoft 365 Business Premium.pdf",
+    "Microsoft 365 Business Standard.pdf",
+    "Microsoft 365 Consumer.pdf",
+    "Microsoft 365 Copilot Basic Design (1).pdf",
+    "Microsoft 365 Copilot Basic Design.pdf",
+    "Microsoft 365 Copilot Detailed Design.pdf",
+    "Microsoft 365 Copilot Extensibility.pdf",
+    "Microsoft 365 Copilot Web Content.pdf",
+    "Microsoft 365 Copilot.pdf",
+    "Microsoft 365 E3.pdf",
+    "Microsoft 365 E5.pdf",
+    "Microsoft 365 Education A1 (Legacy).pdf",
+    "Microsoft 365 Education A1 for Devices.pdf",
+    "Microsoft 365 Education A3.pdf",
+    "Microsoft 365 Education A5.pdf",
+    "Microsoft 365 Education All.pdf",
+    "Microsoft 365 Education Student Use Benefits All.pdf",
+    "Microsoft 365 Education Student Use Benefits Simple.pdf",
+    "Microsoft 365 Enterprise All.pdf",
+    "Microsoft 365 Enterprise Landscape.pdf",
+    "Microsoft 365 Enterprise Venn.pdf",
+    "Microsoft 365 F1.pdf",
+    "Microsoft 365 F3.pdf",
+    "Microsoft 365 F5.pdf",
+    "Microsoft 365 Frontline All.pdf",
+    "Microsoft 365 Personal and Family.pdf",
+    "Microsoft Defender CSPM.pdf",
+    "Microsoft Defender for Business.pdf",
+    "Microsoft Defender for Cloud Apps.pdf",
+    "Microsoft Defender for Endpoint.pdf",
+    "Microsoft Defender for Office 365.pdf",
+    "Microsoft Defender for Servers.pdf",
+    "Microsoft Defender Vulnerability Management.pdf",
+    "Microsoft Project.pdf",
+    "Microsoft Teams Enterprise.pdf",
+    "Microsoft Teams Premium.pdf",
+    "Microsoft Teams Rooms Basic.pdf",
+    "Microsoft Teams Rooms Old.pdf",
+    "Microsoft Teams Rooms Pro.pdf",
+    "Microsoft Teams Rooms.pdf",
+    "Microsoft Teams.pdf",
+    "Microsoft Visio.pdf",
+    "modern-work-plan-comparison-enterprise.pdf",
+    "Multi Tenant Architecture.pdf",
+    "Office 365 E1.pdf",
+    "Office 365 E3.pdf",
+    "Office 365 E5.pdf",
+    "Office 365 Education All.pdf",
+    "Office 365 Education Simple.pdf",
+    "Office 365 Enterprise All.pdf",
+    "Office 365 Enterprise Simple.pdf",
+    "Office 365 F3.pdf",
+    "Office 365 GCC All.pdf",
+    "Office 365 GCC F3.pdf",
+    "Office 365 GCC G1.pdf",
+    "Office Consumer.pdf",
+    "Related Services.pdf",
+    "SharePoint Advanced Management.pdf",
+    "Virtual Desktop.pdf",
+    "Viva.pdf",
+    "Windows 365 Compare.pdf",
+    "Windows 365.pdf",
+    "Windows Enterprise.pdf",
+    "Windows Pro.pdf",
+    "Windows VL.pdf"
+  ]
+}
