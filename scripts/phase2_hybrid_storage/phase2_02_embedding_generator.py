@@ -22,7 +22,7 @@ class EmbeddingGenerator:
     def __init__(self, model_name: Optional[str] = None, cache_dir: Optional[str] = None):
         """Initialize embedding generator with fallback strategies"""
         
-        self.cache_dir = Path(cache_dir) if cache_dir else Path("../models/embeddings")
+        self.cache_dir = Path(cache_dir) if cache_dir else Path("D:\\m365\\models")
         self.cache_dir.mkdir(parents=True, exist_ok=True)
         
         self.model = None

@@ -19,7 +19,7 @@ class VectorDBSetup:
     
     def __init__(self, db_path: Optional[str] = None):
         """Initialize Vector Database Setup"""
-        self.db_path = Path(db_path) if db_path else Path("../data/vector_db")
+        self.db_path = Path(db_path) if db_path else Path(r"D:\m365\data\vector_db")
         self.db_path.mkdir(parents=True, exist_ok=True)
         
         logger.info(f"🗄️ Setting up ChromaDB at: {self.db_path}")

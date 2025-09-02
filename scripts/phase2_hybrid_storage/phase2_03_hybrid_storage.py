@@ -43,22 +43,22 @@ class HybridStorage:
         self.neo4j_user = neo4j_user or os.getenv("NEO4J_USERNAME")
         self.neo4j_password = neo4j_password or os.getenv("NEO4J_PASSWORD")
         
-        logger.info("🕸️ Connecting to Neo4j...")
+        logger.info("Connecting to Neo4j...")
         self.neo4j_driver = GraphDatabase.driver(
             self.neo4j_uri,
             auth=(self.neo4j_user, self.neo4j_password)
         )
         
         # Initialize vector database
-        logger.info("🗄️ Initializing vector database...")
+        logger.info("Initializing vector database...")
         self.vector_db = VectorDBSetup(vector_db_path)
         self.collections = self.vector_db.setup_m365_collections()
         
         # Initialize embedding generator
-        logger.info("🧠 Initializing embedding generator...")
+        logger.info("Initializing embedding generator...")
         self.embedding_generator = EmbeddingGenerator(embedding_model)
         
-        logger.info("✅ HybridStorage initialized successfully")
+        logger.info("HybridStorage initialized successfully")
     
     def _generate_unique_id(self, prefix: str, content: str, counter: Optional[int] = None) -> str:
         """Generate a unique ID using SHA-256 hash to avoid collisions"""
@@ -73,7 +73,7 @@ class HybridStorage:
     def extract_graph_content(self) -> Dict[str, List[Dict]]:
         """Extract structured content from Neo4j graph for embedding"""
         
-        logger.info("📤 Extracting content from Neo4j graph...")
+        logger.info("Extracting content from Neo4j graph...")
         
         extracted_content = {
             'features': [],
@@ -93,15 +93,15 @@ class HybridStorage:
         
         # Log extraction results
         for content_type, items in extracted_content.items():
-            logger.info(f"  📦 {content_type}: {len(items)} items")
+            logger.info(f"  {content_type}: {len(items)} items")
             
             # Verify unique IDs
             ids = [item['id'] for item in items]
             unique_ids = set(ids)
             if len(ids) != len(unique_ids):
-                logger.warning(f"  ⚠️ {len(ids) - len(unique_ids)} duplicate IDs in {content_type}")
+                logger.warning(f"  {len(ids) - len(unique_ids)} duplicate IDs in {content_type}")
             else:
-                logger.info(f"  ✅ All {len(ids)} {content_type} IDs are unique")
+                logger.info(f"  All {len(ids)} {content_type} IDs are unique")
         
         return extracted_content
     
@@ -293,7 +293,7 @@ class HybridStorage:
     def store_embeddings(self, content: Dict[str, List[Dict]]) -> Dict[str, int]:
         """Generate and store embeddings for extracted content"""
         
-        logger.info("🔢 Generating and storing embeddings...")
+        logger.info("Generating and storing embeddings...")
         
         storage_stats = {}
         
@@ -302,7 +302,7 @@ class HybridStorage:
                 storage_stats[content_type] = 0
                 continue
             
-            logger.info(f"  📝 Processing {content_type}...")
+            logger.info(f"  Processing {content_type}...")
             
             collection = self.collections[f'm365_{content_type}']
             
@@ -318,34 +318,53 @@ class HybridStorage:
             # Generate embeddings
             embeddings = self.embedding_generator.encode(texts, show_progress=True)
             
-            # Prepare metadata for ChromaDB
+            # Prepare metadata for ChromaDB - FIXED to handle None values
             metadatas = []
             for item in items:
                 metadata = item['metadata'].copy()
-                metadata.update({
-                    'name': item.get('name', ''),
-                    'content_type': content_type
-                })
                 
-                # Add type-specific metadata
+                # Helper function to clean metadata values
+                def clean_value(value):
+                    """Clean metadata values to ensure ChromaDB compatibility"""
+                    if value is None:
+                        return ""  # Convert None to empty string
+                    elif isinstance(value, (str, int, float, bool)):
+                        return value
+                    elif isinstance(value, list):
+                        # Convert list to comma-separated string
+                        return ",".join(str(v) for v in value if v is not None)
+                    else:
+                        return str(value)  # Convert other types to string
+                
+                # Clean base metadata
+                metadata['name'] = clean_value(item.get('name', ''))
+                metadata['content_type'] = clean_value(content_type)
+                metadata['type'] = clean_value(metadata.get('type', ''))
+                metadata['source'] = clean_value(metadata.get('source', ''))
+                metadata['extracted_at'] = clean_value(metadata.get('extracted_at', ''))
+                
+                # Add type-specific metadata with None handling
                 if content_type == 'features':
-                    metadata.update({
-                        'category': item.get('category', ''),
-                        'plans_count': item.get('plans_count', 0)
-                    })
+                    metadata['category'] = clean_value(item.get('category', ''))
+                    metadata['category_type'] = clean_value(item.get('category_type', ''))
+                    metadata['plans_count'] = item.get('plans_count', 0) or 0  # Ensure it's an integer
+                    
                 elif content_type == 'plans':
-                    metadata.update({
-                        'plan_type': item.get('type', ''),
-                        'feature_count': item.get('feature_count', 0)
-                    })
+                    metadata['plan_type'] = clean_value(item.get('type', ''))
+                    metadata['feature_count'] = item.get('feature_count', 0) or 0  # Ensure it's an integer
+                    
                 elif content_type == 'relationships':
-                    metadata.update({
-                        'feature_name': item.get('feature_name', ''),
-                        'category': item.get('category', ''),
-                        'plan_types': ','.join(item.get('plan_types', []))
-                    })
+                    metadata['feature_name'] = clean_value(item.get('feature_name', ''))
+                    metadata['category'] = clean_value(item.get('category', ''))
+                    metadata['plan_types'] = clean_value(','.join(item.get('plan_types', [])))
                 
-                metadatas.append(metadata)
+                # Final cleanup - remove any remaining None values
+                cleaned_metadata = {}
+                for key, value in metadata.items():
+                    cleaned_value = clean_value(value)
+                    cleaned_metadata[key] = cleaned_value
+                
+                metadatas.append(cleaned_metadata)
             
             # Store in ChromaDB
             collection.upsert(
@@ -356,7 +375,7 @@ class HybridStorage:
             )
             
             storage_stats[content_type] = len(items)
-            logger.info(f"    ✅ Stored {len(items)} {content_type} embeddings")
+            logger.info(f"    Stored {len(items)} {content_type} embeddings")
         
         return storage_stats
     
@@ -367,7 +386,7 @@ class HybridStorage:
                      similarity_threshold: float = 0.0) -> Dict[str, List[Dict]]:
         """Query both vector and graph storage"""
         
-        logger.info(f"🔍 Hybrid query: '{query}'")
+        logger.info(f"Hybrid query: '{query}'")
         
         # Default to all content types
         if content_types is None:
@@ -411,10 +430,10 @@ class HybridStorage:
                             })
                 
                 results[content_type] = processed_results
-                logger.info(f"  📊 {content_type}: {len(processed_results)} results")
+                logger.info(f"  {content_type}: {len(processed_results)} results")
                 
             except Exception as e:
-                logger.warning(f"  ⚠️ Error querying {content_type}: {e}")
+                logger.warning(f"  Error querying {content_type}: {e}")
                 results[content_type] = []
         
         return results
@@ -465,7 +484,7 @@ class HybridStorage:
     def test_hybrid_system(self):
         """Comprehensive test of the hybrid storage system"""
         
-        logger.info("🧪 Testing hybrid storage system...")
+        logger.info("Testing hybrid storage system...")
         
         test_queries = [
             "security features for enterprise",
@@ -476,30 +495,30 @@ class HybridStorage:
         ]
         
         for query in test_queries:
-            logger.info(f"\n🔍 Query: '{query}'")
+            logger.info(f"\nQuery: '{query}'")
             
             # Test hybrid query
             results = self.query_hybrid(query, n_results=3)
             
             for content_type, items in results.items():
                 if items:
-                    logger.info(f"  📊 {content_type.title()}:")
+                    logger.info(f"  {content_type.title()}:")
                     for item in items[:2]:  # Show top 2 results
                         name = item['metadata'].get('name', 'Unknown')
                         similarity = item['similarity']
                         logger.info(f"    • {name} (similarity: {similarity:.3f})")
                 else:
-                    logger.info(f"  📊 {content_type.title()}: No results")
+                    logger.info(f"  {content_type.title()}: No results")
         
         # Test graph context retrieval
-        logger.info(f"\n🕸️ Testing graph context...")
+        logger.info(f"\nTesting graph context...")
         context = self.get_graph_context("Microsoft Teams", "Feature")
         if context:
-            logger.info(f"  ✅ Retrieved context for Microsoft Teams")
+            logger.info(f"  Retrieved context for Microsoft Teams")
         else:
-            logger.info(f"  ⚠️ No context found for Microsoft Teams")
+            logger.info(f"  No context found for Microsoft Teams")
         
-        logger.info("✅ Hybrid system testing complete")
+        logger.info("Hybrid system testing complete")
     
     def get_storage_statistics(self) -> Dict[str, Any]:
         """Get comprehensive storage statistics"""
@@ -552,12 +571,12 @@ class HybridStorage:
         """Close all connections"""
         if hasattr(self, 'neo4j_driver'):
             self.neo4j_driver.close()
-        logger.info("🔐 Connections closed")
+        logger.info("Connections closed")
 
 def setup_hybrid_storage(**kwargs) -> HybridStorage:
     """Main setup function for hybrid storage system"""
     
-    logger.info("🚀 PHASE 2.3: HYBRID STORAGE SETUP")
+    logger.info("PHASE 2.3: HYBRID STORAGE SETUP")
     logger.info("="*50)
     
     try:
@@ -577,29 +596,29 @@ def setup_hybrid_storage(**kwargs) -> HybridStorage:
         stats = hybrid_storage.get_storage_statistics()
         
         # Log results
-        logger.info("\n📊 HYBRID STORAGE STATISTICS")
+        logger.info("\nHYBRID STORAGE STATISTICS")
         logger.info("-" * 40)
         logger.info(f"Vector Collections:")
         for name, info in stats['vector_storage'].get('collections', {}).items():
-            logger.info(f"  📁 {name}: {info['document_count']:,} documents")
+            logger.info(f"  {name}: {info['document_count']:,} documents")
         
         logger.info(f"\nGraph Storage:")
         for label, count in stats['graph_storage']['nodes'].items():
-            logger.info(f"  🏷️ {label}: {count:,} nodes")
+            logger.info(f"  {label}: {count:,} nodes")
         
         logger.info(f"\nHybrid Metrics:")
-        logger.info(f"  🧠 Model: {stats['hybrid_metrics']['embedding_model']['model_name']}")
-        logger.info(f"  📊 Total Embeddings: {stats['hybrid_metrics']['total_embeddings']:,}")
-        logger.info(f"  🕸️ Graph Nodes: {stats['hybrid_metrics']['total_graph_nodes']:,}")
-        logger.info(f"  🔗 Graph Relations: {stats['hybrid_metrics']['total_graph_relationships']:,}")
+        logger.info(f"  Model: {stats['hybrid_metrics']['embedding_model']['model_name']}")
+        logger.info(f"  Total Embeddings: {stats['hybrid_metrics']['total_embeddings']:,}")
+        logger.info(f"  Graph Nodes: {stats['hybrid_metrics']['total_graph_nodes']:,}")
+        logger.info(f"  Graph Relations: {stats['hybrid_metrics']['total_graph_relationships']:,}")
         
-        logger.info("\n✅ PHASE 2.3 COMPLETE!")
+        logger.info("\nPHASE 2.3 COMPLETE!")
         logger.info("="*50)
         
         return hybrid_storage
         
     except Exception as e:
-        logger.error(f"❌ Error in Phase 2.3: {e}")
+        logger.error(f"Error in Phase 2.3: {e}")
         raise
 
 if __name__ == "__main__":
@@ -607,5 +626,5 @@ if __name__ == "__main__":
     hybrid_storage = setup_hybrid_storage()
     
     # Display final status
-    print("\n🎯 Hybrid Storage Ready!")
+    print("\nHybrid Storage Ready!")
     print("Next: Run 04_vector_graph_bridge.py")

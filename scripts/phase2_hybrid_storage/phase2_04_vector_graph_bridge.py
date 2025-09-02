@@ -23,13 +23,94 @@ class VectorGraphBridge:
         """Initialize the bridge with hybrid storage system"""
         
         self.hybrid_storage = hybrid_storage
-        self.mapping_file = Path("../data/vector_graph_mapping.json")
+        
+        # Define base directories for different file types
+        self.base_data_dir = Path(r"D:\m365\data")
+        self.vector_db_dir = Path(r"D:\m365\data\vector_db")
+        
+        # Create directories if they don't exist
+        self.base_data_dir.mkdir(parents=True, exist_ok=True)
+        self.vector_db_dir.mkdir(parents=True, exist_ok=True)
+        
+        # Define specific file paths based on file types
+        self.mapping_file = self.base_data_dir / "vector_graph_mapping.json"
+        self.cache_file = self.vector_db_dir / "bridge_cache.pkl"
+        self.insights_dir = self.base_data_dir / "insights"
+        self.logs_dir = self.base_data_dir / "logs"
+        
+        # Create subdirectories
+        self.insights_dir.mkdir(exist_ok=True)
+        self.logs_dir.mkdir(exist_ok=True)
+        
         self.bridge_cache = {}
+        
+        # Try to load existing cache (will create empty cache if file doesn't exist)
+        self.load_cache()
         
         # Create or load vector-graph mappings
         self.vector_graph_mapping = self._create_mapping()
         
         logger.info("🌉 Vector-Graph Bridge initialized")
+        logger.info(f"📁 Base data directory: {self.base_data_dir}")
+        logger.info(f"📁 Vector DB directory: {self.vector_db_dir}")
+        logger.info(f"📄 Files that will be created on first use:")
+        logger.info(f"   - Mapping file: {self.mapping_file}")
+        logger.info(f"   - Cache file: {self.cache_file}")
+        logger.info(f"   - Insights: {self.insights_dir}")
+        logger.info(f"   - Logs: {self.logs_dir}")
+    
+    def initialize_cache(self):
+        """Initialize cache with default structure"""
+        if not self.bridge_cache:
+            self.bridge_cache = {
+                'query_cache': {},
+                'mapping_cache': {},
+                'cluster_cache': {},
+                'recommendation_cache': {},
+                'metadata': {
+                    'created_at': datetime.now().isoformat(),
+                    'last_updated': datetime.now().isoformat(),
+                    'cache_version': '1.0'
+                }
+            }
+            logger.info("🔧 Initialized empty bridge cache structure")
+    
+    def save_cache(self):
+        """Save bridge cache to persistent storage"""
+        try:
+            # Initialize cache if empty
+            self.initialize_cache()
+            
+            # Update last modified time
+            self.bridge_cache['metadata']['last_updated'] = datetime.now().isoformat()
+            
+            with open(self.cache_file, 'wb') as f:
+                import pickle
+                pickle.dump(self.bridge_cache, f)
+            logger.info(f"💾 Bridge cache saved to: {self.cache_file}")
+        except Exception as e:
+            logger.warning(f"⚠️ Could not save bridge cache: {e}")
+    
+    def load_cache(self):
+        """Load bridge cache from persistent storage"""
+        try:
+            if self.cache_file.exists():
+                with open(self.cache_file, 'rb') as f:
+                    import pickle
+                    self.bridge_cache = pickle.load(f)
+                logger.info(f"📂 Bridge cache loaded from: {self.cache_file}")
+                return True
+            else:
+                logger.info(f"📂 Cache file doesn't exist yet: {self.cache_file}")
+                logger.info("📂 Cache will be created when first saved")
+                # Initialize empty cache
+                self.initialize_cache()
+                return False
+        except Exception as e:
+            logger.warning(f"⚠️ Could not load bridge cache: {e}")
+            # Initialize empty cache on error
+            self.initialize_cache()
+        return False
     
     def _create_mapping(self) -> Dict[str, Dict]:
         """Create bidirectional mapping between vector IDs and graph node IDs"""
@@ -48,7 +129,9 @@ class VectorGraphBridge:
             },
             'metadata': {
                 'created_at': datetime.now().isoformat(),
-                'total_mappings': 0
+                'total_mappings': 0,
+                'mapping_file': str(self.mapping_file),
+                'vector_db_dir': str(self.vector_db_dir)
             }
         }
         
@@ -187,7 +270,7 @@ class VectorGraphBridge:
                 MATCH paths = (start)-[*1..2]-(connected)
                 WHERE NOT start = connected
                 RETURN DISTINCT connected, 
-                       type(connected) as node_type,
+                       labels(connected)[0] as node_type,
                        length(paths) as distance,
                        [r in relationships(paths) | type(r)] as relationship_types
                 LIMIT 10
@@ -692,8 +775,25 @@ class VectorGraphBridge:
         """Export comprehensive bridge insights and analytics"""
         
         if not output_file:
-            output_file = f"../data/bridge_insights_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
-        
+            # Save directly in the base data directory with timestamp
+            timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+            output_file = self.base_data_dir / f"bridge_insights_{timestamp}.json"
+
+        else:
+            # If custom output file provided, determine directory based on file type
+            output_path = Path(output_file)
+            
+            # If it's a relative path, decide directory based on extension
+            if not output_path.is_absolute():
+                if output_path.suffix.lower() in ['.json', '.txt', '.log']:
+                    output_file = self.base_data_dir / output_file
+                elif output_path.suffix.lower() in ['.pkl', '.db', '.vector']:
+                    output_file = self.vector_db_dir / output_file
+                else:
+                    # Default to base data directory
+                    output_file = self.base_data_dir / output_file
+            else:
+                output_file = output_path
         logger.info(f"📊 Exporting bridge insights to: {output_file}")
         
         insights = {
@@ -883,7 +983,7 @@ def setup_vector_graph_bridge(hybrid_storage: HybridStorage) -> VectorGraphBridg
 
 if __name__ == "__main__":
     # This would typically be called after setting up hybrid storage
-    from .03_hybrid_storage import setup_hybrid_storage
+    from phase2_03_hybrid_storage import setup_hybrid_storage
     
     # Setup hybrid storage first
     hybrid_storage = setup_hybrid_storage()
