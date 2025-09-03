@@ -51,7 +51,7 @@ class EntityLinker:
     
     def _load_existing_mappings(self) -> Dict:
         """Load existing entity mappings from file"""
-        mapping_path = Path("../data/entity_mappings.json")
+        mapping_path = Path("D:\m365\data\entity_mappings.json")
         
         if mapping_path.exists():
             with open(mapping_path, 'r') as f:
@@ -67,7 +67,7 @@ class EntityLinker:
     
     def _save_mappings(self):
         """Save entity mappings to file"""
-        mapping_path = Path("../data/entity_mappings.json")
+        mapping_path = Path("D:\m365\data\entity_mappings.json")
         mapping_path.parent.mkdir(parents=True, exist_ok=True)
         
         with open(mapping_path, 'w') as f:

@@ -1,0 +1,97 @@
+{
+  "metadata": {
+    "export_time": "2025-09-03T01:49:05.203084",
+    "vector_graph_mappings": 0,
+    "total_collections": 3
+  },
+  "vector_statistics": {
+    "db_path": "D:\\m365\\data\\vector_db",
+    "total_collections": 3,
+    "total_documents": 1828,
+    "collections": {
+      "m365_plans": {
+        "document_count": 37,
+        "metadata": {
+          "content_type": "plan",
+          "created_at": "2025-09-02T21:14:26.414783",
+          "description": "Microsoft 365 plan embeddings",
+          "hnsw:M": 16,
+          "hnsw:construction_ef": 200,
+          "hnsw:space": "cosine"
+        }
+      },
+      "m365_relationships": {
+        "document_count": 420,
+        "metadata": {
+          "content_type": "relationship",
+          "created_at": "2025-09-02T21:14:26.451675",
+          "description": "Feature-plan relationship embeddings",
+          "hnsw:M": 16,
+          "hnsw:construction_ef": 200,
+          "hnsw:space": "cosine"
+        }
+      },
+      "m365_features": {
+        "document_count": 1371,
+        "metadata": {
+          "content_type": "feature",
+          "created_at": "2025-09-02T21:14:26.371670",
+          "description": "Microsoft 365 feature embeddings",
+          "hnsw:M": 16,
+          "hnsw:construction_ef": 200,
+          "hnsw:space": "cosine"
+        }
+      }
+    }
+  },
+  "graph_statistics": {
+    "nodes": {
+      "Feature": 1371,
+      "Plan": 37,
+      "Document": 0,
+      "Category": 6,
+      "Concept": 9
+    },
+    "relationships": {
+      "AVAILABLE_IN": 4546,
+      "UPGRADES_TO": 3
+    }
+  },
+  "bridge_statistics": {
+    "embedding_model": {
+      "model_name": "all-MiniLM-L6-v2",
+      "model_type": "transformer",
+      "embedding_dimension": 384,
+      "cache_dir": "D:\\m365\\models"
+    },
+    "total_embeddings": 1828,
+    "total_graph_nodes": 1423,
+    "total_graph_relationships": 4549
+  },
+  "sample_queries": [
+    {
+      "query": "email security features",
+      "primary_results": 0,
+      "expanded_results": 0,
+      "success": true
+    },
+    {
+      "query": "collaboration tools",
+      "primary_results": 0,
+      "expanded_results": 0,
+      "success": true
+    },
+    {
+      "query": "data protection",
+      "primary_results": 0,
+      "expanded_results": 0,
+      "success": true
+    },
+    {
+      "query": "SharePoint capabilities",
+      "primary_results": 0,
+      "expanded_results": 0,
+      "success": true
+    }
+  ]
+}
